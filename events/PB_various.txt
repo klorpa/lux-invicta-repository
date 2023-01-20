@@ -37,14 +37,7 @@ character_event = {
 				is_married = no
 				prisoner = no
 				is_adult = yes #Never kill kids
-				OR = { #Aren't important people
-					dynasty = 0
-					NOT = {
-						any_dynasty_member = {
-							higher_tier_than = baron
-						}
-					}
-				}
+				is_lowborn = yes
 				NOT = { #Have no useful claims
 					any_claim = {
 						higher_tier_than = baron
@@ -82,61 +75,6 @@ character_event = {
 				}
 			}
 			death = { death_reason = death_poor_health }
-		}
-	}
-}
-
-
-
-# Reward for converting a province [was meneth.206]
-letter_event = {
-	id = pb_various.4
-	desc = meneth.206.desc
-	border = GFX_event_letter_frame_religion
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = meneth.206.a
-		random_list = {
-			50 = {
-				piety = 25
-			}
-			25 = {
-				change_learning = 1
-			}
-			10 = {
-				add_trait = zealous
-				hidden_tooltip = { character_event = { id = 38269 } }
-			}
-			5 = {
-				add_trait = diligent
-				hidden_tooltip = { character_event = { id = 38256 } }
-			}
-			5 = {
-				add_trait = patient
-				hidden_tooltip = { character_event = { id = 38264 } }
-			}
-			1 = {
-				add_trait = chaste
-				hidden_tooltip = { character_event = { id = 38274 } }
-			}
-			1 = {
-				add_trait = temperate
-				hidden_tooltip = { character_event = { id = 38276 } }
-			}
-			1 = {
-				add_trait = charitable
-				hidden_tooltip = { character_event = { id = 38273 } }
-			}
-			1 = {
-				add_trait = kind
-				hidden_tooltip = { character_event = { id = 38268 } }
-			}
-			1 = {
-				add_trait = humble
-				hidden_tooltip = { character_event = { id = 38260 } }
-			}
 		}
 	}
 }
